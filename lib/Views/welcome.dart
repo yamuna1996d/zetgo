@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class MyHomePage extends StatelessWidget {
   final String title;
 
@@ -8,63 +9,178 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [Colors.red, Colors.black87],
+                  begin: Alignment.topRight,
+                  end: Alignment.center),
+          ),
+        ),
         title: Text(title,
             style: TextStyle(
                 fontFamily: 'Raleway',
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold)),
-        backgroundColor: Colors.red,
         actions: <Widget>[
           new IconButton(
               icon: Icon(
                 Icons.search,
                 color: Colors.white,
               ),
-              onPressed: () {}),
-          new IconButton(
-              icon: Icon(
-                Icons.shopping_cart,
-                color: Colors.white,
-              ),
-              onPressed: () {}),
+              onPressed: () {
+                
+              }),
         ],
       ),
-      bottomNavigationBar: BottomNavCustom(),
-      body: Center(child: Text('Homepage!')),
-      drawer: Drawer(
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the Drawer if there isn't enough vertical
-        // space to fit everything.
+      bottomNavigationBar: BottomNavCustom(
+      ),
+      body: SafeArea(
         child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
-              child: Text('Drawer Header'),
+            Container(
               decoration: BoxDecoration(
-                color: Colors.blue,
+                  gradient: LinearGradient(
+                      colors: [Colors.red, Colors.black87],
+                      begin: Alignment.topRight,
+                      end: Alignment.center),
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: const Radius.circular(40.0),
+                      bottomRight: const Radius.circular(40.0))),
+              height: 150.0,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Image.asset(
+                    'assets/pinf.png',
+                    height: 50.0,
+                    width: 50.0,
+                  ),
+
+                ],
               ),
             ),
-            ListTile(
-              title: Text('My Account'),
-              onTap: () {
-                Navigator.pop(context);
-              },
+            Transform.translate(
+              offset: Offset(0.0, -30),
+//              child: Container(
+//                margin: EdgeInsets.symmetric(horizontal: 50.0),
+//                height: 20.0,
+//                decoration: BoxDecoration(color: Colors.deepPurpleAccent,
+//    borderRadius: BorderRadius.only(
+//    topLeft: const Radius.circular(30.0),
+//    bottomRight: const Radius.circular(30.0),
+//    bottomLeft: const Radius.circular(30.0),
+//    topRight: const Radius.circular(30.0))
+//                ),
+//                child: Column(
+//                  mainAxisAlignment: MainAxisAlignment.center,
+//                  children: <Widget>[
+//                    Text(
+//                      "Choose one",
+//                      style: TextStyle(
+//                          color: Colors.white, fontWeight: FontWeight.bold),
+//                    )
+//                  ],
+//                ),
+//              ),
             ),
-            ListTile(
-              title: Text('Order History'),
-              onTap: () {
-                Navigator.pop(context);
-              },
+            Container(
+              margin: EdgeInsets.only(left: 10),
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.all(10),
+                        width: 150,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius:
+                          BorderRadius.all(Radius.circular(20.0),),
+                        ), child:Center(child: Text("English")) ,
+                      ),
+
+                      Container(
+                        width: 150,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius:
+                          BorderRadius.all(Radius.circular(20.0),),
+                        ), child:Center(child: Text("Tamil")) ,
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.all(10),
+                            width: 150,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius:
+                              BorderRadius.all(Radius.circular(20.0),),
+                            ), child:Center(child: Text("Hindi")) ,
+                          ),
+
+                          Container(
+                            width: 150,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius:
+                              BorderRadius.all(Radius.circular(20.0),),
+                            ), child:Center(child: Text("French")) ,
+                          ),
+                        ],
+                      ),
+                    ],
+                  )
+                ],
+              ),
+
             ),
-            ListTile(
-              title: Text('Reservation History'),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            )
+
           ],
         ),
+//    drawer: Drawer(
+//        // Add a ListView to the drawer. This ensures the user can scroll
+//        // through the options in the Drawer if there isn't enough vertical
+//        // space to fit everything.
+//        child: ListView(
+//          // Important: Remove any padding from the ListView.
+//          padding: EdgeInsets.zero,
+//          children: <Widget>[
+//            DrawerHeader(
+//              child: Text('Drawer Header'),
+//              decoration: BoxDecoration(
+//                color: Colors.blue,
+//              ),
+//            ),
+//            ListTile(
+//              title: Text('My Account'),
+//              onTap: () {
+//                Navigator.pop(context);
+//              },
+//            ),
+//            ListTile(
+//              title: Text('Order History'),
+//              onTap: () {
+//                Navigator.pop(context);
+//              },
+//            ),
+//            ListTile(
+//              title: Text('Reservation History'),
+//              onTap: () {
+//                Navigator.pop(context);
+//              },
+//            )
+//          ],
+//        ),
       ),
     );
   }
@@ -81,10 +197,10 @@ class _BottomNavCustomState extends State<BottomNavCustom> {
 
   List<NavigationItem> items = [
     NavigationItem(Icon(Icons.home), Text('Home'), Colors.deepPurpleAccent),
-    NavigationItem(Icon(Icons.favorite_border), Text('Chat'), Colors.pinkAccent),
-    NavigationItem(Icon(Icons.person_outline), Text('Profile'), Colors.green),
-    NavigationItem(Icon(Icons.book), Text('Exams'), Colors.blueAccent),
-    NavigationItem(Icon(Icons.beenhere), Text('Results'), Colors.amberAccent),
+    NavigationItem(Icon(Icons.chat), Text('Chat'), Colors.pinkAccent),
+    NavigationItem(Icon(Icons.person_outline), Text('Result'), Colors.green),
+    NavigationItem(Icon(Icons.notifications), Text('Notification'), Colors.blueAccent),
+    NavigationItem(Icon(Icons.settings), Text('Setting'), Colors.amberAccent),
   ];
 
   Widget _buildItem(NavigationItem item, bool isSelected) {
@@ -95,8 +211,8 @@ class _BottomNavCustomState extends State<BottomNavCustom> {
       padding: isSelected ? EdgeInsets.only(left: 16, right: 16) : null,
       decoration: isSelected
           ? BoxDecoration(
-          color: item.color,
-          borderRadius: BorderRadius.all(Radius.circular(50)))
+              color: item.color,
+              borderRadius: BorderRadius.all(Radius.circular(50)))
           : null,
       child: ListView(
         scrollDirection: Axis.horizontal,
@@ -115,8 +231,8 @@ class _BottomNavCustomState extends State<BottomNavCustom> {
                 padding: const EdgeInsets.only(left: 8),
                 child: isSelected
                     ? DefaultTextStyle.merge(
-                    style: TextStyle(color: backgroundColorNav),
-                    child: item.title)
+                        style: TextStyle(color: backgroundColorNav),
+                        child: item.title)
                     : Container(),
               )
             ],

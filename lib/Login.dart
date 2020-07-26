@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:zetgo/Views/settings.dart';
 import 'package:zetgo/Views/welcome.dart';
 import 'package:zetgo/signup.dart';
 class Login extends StatefulWidget {
@@ -9,6 +10,15 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  bool _isHidden = true;
+
+
+  void _toggleVisibility(){
+    setState(() {
+      _isHidden = !_isHidden;
+    });
+  }
+
   Widget crkl(clr, icn, rds) {
     return CircleAvatar(
       backgroundColor: clr,
@@ -81,21 +91,31 @@ class _LoginState extends State<Login> {
                     controller: txtr,
                     decoration: InputDecoration(
                       hintText: "Enter Email or Phone number",
-                      prefixIcon: Icon(Icons.perm_identity),
+                      prefixIcon: Icon(Icons.perm_identity,color: Colors.red,),
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20.0)),
+                          borderRadius: BorderRadius.circular(20.0),borderSide: new BorderSide(color: Colors.red)),
+                      focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0),
+                          borderSide:BorderSide(color: Colors.red,width: 2) ),
                     ),
                   ),
 
                   TextField(
                     controller: pass,
-                    obscureText: true,
                     decoration: InputDecoration(
                       hintText: "Enter Password",
-                      prefixIcon: Icon(Icons.lock),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20.0)),
+                      prefixIcon: Icon(Icons.lock,color: Colors.red,),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0),
+                          borderSide:BorderSide(color: Colors.red,) ),
+                      focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0),
+                          borderSide:BorderSide(color: Colors.red,width: 2) ),
+                      suffixIcon:  IconButton(
+                        color: Colors.red,
+                        onPressed: _toggleVisibility,
+                        icon: _isHidden ? Icon(Icons.visibility_off) : Icon(Icons.visibility),
+                      ) ,
+
                     ),
+                    obscureText:  _isHidden,
                   ),
                   Padding(
                       padding: const EdgeInsets.only(left: 200),
@@ -113,7 +133,7 @@ class _LoginState extends State<Login> {
                   height: 50.0,
                   child: FlatButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHomePage(title: "App",)));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>SettingsPage()));
                     },
                     child: Text(
                       "Sign in",
@@ -131,7 +151,7 @@ class _LoginState extends State<Login> {
                       ]),
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.black.withOpacity(0.8),
+                            color: Colors.black.withOpacity(0.5),
                             blurRadius: 10.0,
                             spreadRadius: 2.0)
                       ]),

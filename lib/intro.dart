@@ -53,7 +53,7 @@ class _AnimatedCBState extends State<AnimatedCB>
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  child: Image.asset("assets/h.jpg"),
+                 // child: Image.asset("assets/h.jpg"),
                 ),
                 Padding(padding: EdgeInsets.only(top: 60.0)),
                 Text(
