@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "143457195660",
+    "firebase_url": "https://zetgo-59f8e.firebaseio.com",
+    "project_id": "zetgo-59f8e",
+    "storage_bucket": "zetgo-59f8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:143457195660:android:97d0f556270fa92d780da9",
+        "android_client_info": {
+          "package_name": "com.coco.zetgo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "143457195660-d70dumit99m7g2lt6moj979f44hgdje7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALa6YwJES8Jcm7uzUXJcvj9TzIwvDH2qg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "143457195660-d70dumit99m7g2lt6moj979f44hgdje7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

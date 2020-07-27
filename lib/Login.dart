@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:zetgo/Views/bottomNav.dart';
 import 'package:zetgo/Views/settings.dart';
 import 'package:zetgo/Views/welcome.dart';
 import 'package:zetgo/signup.dart';
@@ -124,7 +125,7 @@ class _LoginState extends State<Login> {
                 ],
               ),
             ),
-            SizedBox(height: 20.0),
+            SizedBox(height: 10.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -133,7 +134,7 @@ class _LoginState extends State<Login> {
                   height: 50.0,
                   child: FlatButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>SettingsPage()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomNav()));
                     },
                     child: Text(
                       "Sign in",
@@ -170,7 +171,42 @@ class _LoginState extends State<Login> {
 
               ],
             ),
+      Align(
+        alignment: Alignment.bottomCenter,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            Text("or, connect with"),
 
+            Row(
+              children: <Widget>[
+                SizedBox(width: 20.0,),
+                Expanded(
+                  child: RaisedButton(
+                    child: Text("Facebook"),
+                    textColor: Colors.white,
+                    color: Colors.blue,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(40)),
+                    ),
+                    onPressed: (){},
+                  ),
+                ),
+                SizedBox(width: 10.0,),
+                Expanded(
+                  child: RaisedButton(
+                    child: Text("Google"),
+                    textColor: Colors.white,
+                    color: Colors.red,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(40)),
+                    ),
+                    onPressed: (){},
+                  ),
+                ),
+                SizedBox(width: 20.0,),
+              ],
+            ),
             SizedBox(height: 20.0),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Text("New User? "),
@@ -182,7 +218,7 @@ class _LoginState extends State<Login> {
             ])
           ],
         ),
-      ),
+      ),]))
     );
   }
 }
