@@ -15,7 +15,6 @@ class _BottomNavState extends State<BottomNav> {
   List<Widget> _widgetOptions = <Widget>[
     MyHomePage(title: 'app',),
     ChatScreen(),
-    SettingsPage(),
     ChatScreen(),
 
   ];
@@ -40,11 +39,7 @@ class _BottomNavState extends State<BottomNav> {
         activeIcon: Icon(Icons.chat, size: 20, color: Colors.white),
         title: Text('Chat', style: TextStyle(color: Colors.white, fontSize: 12),),
       ),
-      BubbledNavigationBarItem(
-        icon:       Icon(Icons.settings, size: 20, color: Colors.teal),
-        activeIcon: Icon(Icons.settings, size: 20, color: Colors.white),
-        title: Text('Settings', style: TextStyle(color: Colors.white, fontSize: 12),),
-      ),
+
       BubbledNavigationBarItem(
         icon:       Icon(Icons.person_outline, size: 20, color: Colors.cyan),
         activeIcon: Icon(Icons.person, size: 20, color: Colors.white),

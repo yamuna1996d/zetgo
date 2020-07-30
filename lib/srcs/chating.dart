@@ -93,6 +93,12 @@ class _ChatScreenState extends State<ChatScreen> {
             color: Colors.red,
             onPressed: () {},
           ),
+          IconButton(
+            icon: Icon(Icons.attach_file),
+            iconSize: 25.0,
+            color: Colors.red,
+            onPressed: () {},
+          ),
           Expanded(
             child: TextField(
               textCapitalization: TextCapitalization.sentences,
@@ -164,22 +170,22 @@ class _ChatScreenState extends State<ChatScreen> {
                       topRight: Radius.circular(30.0),
                     ),
                   ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30.0),
-                      topRight: Radius.circular(30.0),
-                    ),
-                    child: ListView.builder(
-                      reverse: true,
-                      padding: EdgeInsets.only(top: 15.0),
-                      itemCount: messages.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        final Message message = messages[index];
-                        final bool isMe = message.sender.id == currentUser.id;
-                        return _buildMessage(message, isMe);
-                      },
-                    ),
-                  ),
+//                  child: ClipRRect(
+//                    borderRadius: BorderRadius.only(
+//                      topLeft: Radius.circular(30.0),
+//                      topRight: Radius.circular(30.0),
+//                    ),
+//                    child: ListView.builder(
+//                      reverse: true,
+//                      padding: EdgeInsets.only(top: 15.0),
+//                      itemCount: messages.length,
+//                      itemBuilder: (BuildContext context, int index) {
+//                        final Message message = messages[index];
+//                        final bool isMe = message.sender.id == currentUser.id;
+//                        return _buildMessage(message, isMe);
+//                      },
+//                    ),
+//                  ),
                 ),
               ),
               _buildMessageComposer(),

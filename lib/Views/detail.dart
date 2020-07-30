@@ -1,4 +1,5 @@
 import 'dart:ui' as ui;
+import 'package:zetgo/Views/Order.dart';
 import 'package:zetgo/Views/welcome.dart';
 import 'package:zetgo/srcs/networkimages.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -33,7 +34,7 @@ class DetailPage extends StatelessWidget {
           height: 50.0,
           child: FlatButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHomePage(title: 'App',)));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>OrderPage()));
             },
             child: Text(
               "Join Course",
@@ -113,6 +114,7 @@ class DetailPage extends StatelessWidget {
             width: 225.0,
             height: 1.0,
           ),
+
           Text(
             "bdajfhohoijgijpijgpiwrjgpwmrlg Lorem Ipsum is simply dummy text of the printing and typesetting industry.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
 
@@ -159,7 +161,7 @@ class DetailPage extends StatelessWidget {
             onPressed: () => Navigator.pop(context),
           ),
 
-          PNetworkImage(dev.backdropPhoto, fit: BoxFit.cover),
+          //PNetworkImage(dev.backdropPhoto, fit: BoxFit.cover),
           BackdropFilter(
             filter: ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
             child: Container(

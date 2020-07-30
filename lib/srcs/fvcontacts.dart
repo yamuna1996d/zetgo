@@ -52,7 +52,8 @@ class FavoriteContacts extends StatelessWidget {
                                 ChatScreen(
                                   user: favorites[index],
                                 ),
-                          ),
+//                          ChatPage()
+),
                         ),
                     child: Padding(
                       padding: EdgeInsets.all(10.0),

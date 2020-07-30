@@ -1,5 +1,6 @@
 import 'package:bubbled_navigation_bar/bubbled_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:zetgo/Views/Chat.dart';
 import 'package:zetgo/Views/detail.dart';
 import 'package:zetgo/Views/settings.dart';
@@ -36,6 +37,14 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {
                 
               }),
+          IconButton(
+              icon: Icon(
+                Icons.settings,
+                color: Colors.white,
+              ),
+              onPressed: () {
+              Navigator.push(context,MaterialPageRoute(builder: (context)=>SettingsPage()));
+              }),
         ],
       ),
       body: SafeArea(
@@ -50,7 +59,7 @@ class MyHomePage extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       bottomLeft: const Radius.circular(40.0),
                       bottomRight: const Radius.circular(40.0))),
-              height: 150.0,
+              height: 250.0,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -59,7 +68,19 @@ class MyHomePage extends StatelessWidget {
                     height: 50.0,
                     width: 50.0,
                   ),
-
+                  Text("Hello Friend", style:GoogleFonts.dancingScript(
+                      color: Colors.white,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.w900,
+                      fontSize: 25),),
+                  SizedBox(height: 25,),
+                  Text('What do you want to learn today?',
+                    style: GoogleFonts.notoSerif(
+                        color: Colors.white,
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 20),
+                  ),
                 ],
               ),
             ),
